@@ -1,22 +1,277 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Open Source Utilities</title>
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Browser Image Processing Examples | Privacy-First Client-Side Image Tools</title>
+
+    <meta name="description" content="Open-source browser image processing examples including image resize, compression, crop, WebP conversion, AVIF conversion, metadata removal, and batch processing.">
+
+    <meta name="keywords" content="browser image processing, client-side image processing, privacy image tools, image processing in browser, local image processing, image compression, image resize">
+
+    <meta property="og:title" content="Browser Image Processing Examples">
+    <meta property="og:description" content="Privacy-first image processing examples that run entirely inside the browser.">
+    <meta property="og:type" content="website">
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 1000px;
+            margin: auto;
+            padding: 40px 20px;
+            line-height: 1.7;
+            color: #222;
+        }
+
+        h1,h2,h3 {
+            color: #111;
+        }
+
+        .card {
+            border: 1px solid #ddd;
+            padding: 20px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+        }
+
+        code {
+            background: #f5f5f5;
+            padding: 2px 6px;
+            border-radius: 4px;
+        }
+
+        pre {
+            background: #111;
+            color: #fff;
+            padding: 20px;
+            overflow-x: auto;
+            border-radius: 10px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+        }
+
+        th {
+            background: #f7f7f7;
+        }
+
+        .cta {
+            background: #f0fdf4;
+            border: 1px solid #22c55e;
+            padding: 24px;
+            border-radius: 12px;
+            margin-top: 40px;
+        }
+    </style>
+
+    <script type="application/ld+json">
+    {
+      "@context":"https://schema.org",
+      "@type":"FAQPage",
+      "mainEntity":[
+        {
+          "@type":"Question",
+          "name":"Are images uploaded to a server?",
+          "acceptedAnswer":{
+            "@type":"Answer",
+            "text":"No. All image processing occurs locally inside the browser."
+          }
+        },
+        {
+          "@type":"Question",
+          "name":"Does this work offline?",
+          "acceptedAnswer":{
+            "@type":"Answer",
+            "text":"Most browser image processing operations can run entirely offline."
+          }
+        },
+        {
+          "@type":"Question",
+          "name":"Is EXIF metadata removed?",
+          "acceptedAnswer":{
+            "@type":"Answer",
+            "text":"The metadata removal example strips EXIF information including GPS coordinates and camera information."
+          }
+        }
+      ]
+    }
+    </script>
+
 </head>
 <body>
-    <h1>Open Source Utilities</h1>
-    <p>Privacy-first browser image processing examples.</p>
 
-    <ul>
-        <li>Browser Image Resize</li>
-        <li>Client Compression</li>
-        <li>WebP Conversion</li>
-        <li>AVIF Conversion</li>
-        <li>Image Crop</li>
-        <li>Remove Metadata</li>
-        <li>Batch Resize</li>
-    </ul>
+<h1>Browser Image Processing Examples</h1>
+
+<p>
+Open-source examples for building privacy-first browser image processing tools using modern web APIs.
+</p>
+
+<ul>
+    <li>No uploads</li>
+    <li>No tracking</li>
+    <li>No server processing</li>
+    <li>Privacy-first architecture</li>
+</ul>
+
+<h2>Why Process Images Inside the Browser?</h2>
+
+<p>
+Traditional image tools upload files to external servers before processing.
+Browser image processing takes a different approach by running everything locally on the user's device.
+This improves privacy, reduces latency, and lowers infrastructure costs.
+</p>
+
+<h2>Privacy Benefits</h2>
+
+<p>
+Images never leave the user's computer. This is particularly useful for:
+</p>
+
+<ul>
+    <li>Identity documents</li>
+    <li>Medical records</li>
+    <li>Financial documents</li>
+    <li>Business assets</li>
+</ul>
+
+<h2>Performance Benefits</h2>
+
+<ul>
+    <li>Instant processing</li>
+    <li>No upload delays</li>
+    <li>Lower bandwidth usage</li>
+    <li>Improved scalability</li>
+</ul>
+
+<h2>Available Examples</h2>
+
+<table>
+    <tr>
+        <th>Example</th>
+        <th>Description</th>
+    </tr>
+
+    <tr>
+        <td>browser-image-resize</td>
+        <td>Resize images locally using Canvas API.</td>
+    </tr>
+
+    <tr>
+        <td>client-compression</td>
+        <td>Compress images directly inside the browser.</td>
+    </tr>
+
+    <tr>
+        <td>webp-conversion</td>
+        <td>Convert images to WebP format.</td>
+    </tr>
+
+    <tr>
+        <td>avif-conversion</td>
+        <td>Convert images to AVIF format.</td>
+    </tr>
+
+    <tr>
+        <td>image-crop</td>
+        <td>Crop images locally.</td>
+    </tr>
+
+    <tr>
+        <td>remove-metadata</td>
+        <td>Remove EXIF metadata and GPS information.</td>
+    </tr>
+
+    <tr>
+        <td>batch-resize</td>
+        <td>Resize multiple images in a single operation.</td>
+    </tr>
+</table>
+
+<h2>Example Code</h2>
+
+<pre><code>
+const bitmap = await createImageBitmap(file);
+
+canvas.width = 800;
+canvas.height = 600;
+
+ctx.drawImage(bitmap, 0, 0, 800, 600);
+
+canvas.toBlob(blob => {
+    download(blob);
+}, 'image/webp', 0.8);
+</code></pre>
+
+<h2>Browser Compatibility</h2>
+
+<table>
+    <tr>
+        <th>Feature</th>
+        <th>Chrome</th>
+        <th>Firefox</th>
+        <th>Safari</th>
+        <th>Edge</th>
+    </tr>
+
+    <tr>
+        <td>Canvas API</td>
+        <td>✅</td>
+        <td>✅</td>
+        <td>✅</td>
+        <td>✅</td>
+    </tr>
+
+    <tr>
+        <td>WebP Export</td>
+        <td>✅</td>
+        <td>✅</td>
+        <td>✅</td>
+        <td>✅</td>
+    </tr>
+
+    <tr>
+        <td>AVIF Export</td>
+        <td>✅</td>
+        <td>✅</td>
+        <td>✅</td>
+        <td>✅</td>
+    </tr>
+</table>
+
+<h2>Frequently Asked Questions</h2>
+
+<h3>Are images uploaded to a server?</h3>
+<p>No. All processing happens locally in the browser.</p>
+
+<h3>Does this work offline?</h3>
+<p>Yes. Most examples continue working without an internet connection.</p>
+
+<h3>Is metadata permanently removed?</h3>
+<p>Yes. The metadata removal example exports a new image without EXIF information.</p>
+
+<h3>Which browsers are supported?</h3>
+<p>Modern versions of Chrome, Firefox, Edge, and Safari are supported.</p>
+
+<h2>Contributing</h2>
+
+<p>
+Contributions are welcome. Feel free to improve examples, documentation, or browser compatibility support.
+</p>
+
+<div class="cta">
+    <h2>Build Privacy-First Image Tools</h2>
+
+    <p>
+        Explore the examples, clone the repository, and build browser image tools that run entirely on the user's device.
+    </p>
 
     <p>
         Related project:
@@ -24,5 +279,7 @@
             image-resizer.net
         </a>
     </p>
+</div>
+
 </body>
 </html>
