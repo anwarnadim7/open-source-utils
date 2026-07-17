@@ -1,32 +1,26 @@
-# Open Source Utilities
+# Browser Image Processing Examples
 
-A collection of open-source utilities, examples, and developer resources focused on privacy-first web tools, image processing, SEO, and modern web development.
+All examples process images entirely inside the browser.
 
-## Projects
+## Features
 
-* Browser-based image resizing
-* Client-side image compression
-* Privacy-first image processing
-* SEO utilities and examples
-* Modern web development resources
+- No uploads
+- No tracking
+- No server processing
+- Privacy-first
 
-## Related Projects
+## Examples
 
-* **Image Resizer** — https://image-resizer.net
-  Privacy-first image tools that run directly in the browser without uploading files to a server.
+| Example | Description |
+|----------|------------|
+| browser-image-resize | Resize images locally |
+| client-compression | Compress images locally |
+| webp-conversion | Convert images to WebP |
+| avif-conversion | Convert images to AVIF |
+| image-crop | Crop images using Canvas API |
+| remove-metadata | Remove EXIF metadata |
+| batch-resize | Resize multiple images |
 
-## Philosophy
+## Related Documentation
 
-* No uploads whenever possible
-* Privacy-first design
-* Fast browser-based processing
-* Open-source learning resources
-* Transparent and user-friendly tools
-
-## Goals
-
-This repository aims to share practical examples, utilities, and educational resources for developers building modern privacy-focused web applications.
-
-## License
-
-MIT License
+See the `/docs` directory for technical explanations and implementation details.
